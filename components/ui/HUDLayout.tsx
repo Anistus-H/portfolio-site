@@ -56,7 +56,7 @@ export const HUDLayout: React.FC<HUDLayoutProps> = ({ children }) => {
                 <header className="absolute top-0 left-0 w-full h-16 border-b border-neon-cyan/20 bg-bg-primary/40 backdrop-blur-md pointer-events-auto flex items-center justify-between px-6 md:px-12">
                     <div className="flex items-center gap-4">
                         <div className="w-8 h-8 border border-neon-cyan flex items-center justify-center text-[10px] font-mono text-neon-cyan">
-                            AN
+                            HA
                         </div>
                         <div className="hidden md:block">
                             {/* <h1 className="text-sm font-heading tracking-widest text-neon-cyan uppercase pt-2">{profile.nickname}</h1> */}
