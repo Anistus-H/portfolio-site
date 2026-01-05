@@ -81,7 +81,7 @@ export const Footer: React.FC = () => {
                         </div>
                         <div className="flex items-center gap-4">
                             <p className="text-text-muted text-[9px] font-mono uppercase tracking-widest">
-                                Built_With: Next.js_TS_Framer
+                                Built_With: CAFFEINE_AND_AI
                             </p>
                             <div className="w-2 h-2 bg-neon-purple/20 rounded-full" />
                         </div>
