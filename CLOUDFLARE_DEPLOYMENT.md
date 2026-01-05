@@ -9,23 +9,22 @@ Follow these steps to deploy your portfolio site to Cloudflare Pages.
 
 ## 2. Build Settings
 In the **Build settings** section, use the following configuration:
-- **Framework preset**: `Next.js`
+- **Framework preset**: `None` (or `Next.js` if available, but we use a custom command)
 - **Build command**: `npm run pages:build`
-- **Build output directory**: `.vercel/output/static`
+- **Build output directory**: `.open-next/assets`
 
 ## 3. Environment Variables
 Add the following variables in the **Environment variables (advanced)** section:
 - `RESEND_API_KEY`: Your Resend API key.
 - `CONTACT_EMAIL`: The email address where you want to receive messages.
 - `NODE_VERSION`: `20` (or higher).
-- `NPM_CONFIG_LEGACY_PEER_DEPS`: `true` (Required for Next.js 16 compatibility).
 
 ## 4. Compatibility Flags
 Once the project is created, go to **Settings** > **Functions** > **Compatibility flags**:
-- Add `nextjs_compute_js` to both **Production** and **Preview** environments.
+- Add `nodejs_compat` to both **Production** and **Preview** environments.
 
 ## 5. Deploy
-Click **Save and Deploy**. Cloudflare will now build and deploy your site!
+Click **Save and Deploy**. Cloudflare will now build and deploy your site using OpenNext!
 
 ---
 
