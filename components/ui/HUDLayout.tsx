@@ -60,7 +60,7 @@ export const HUDLayout: React.FC<HUDLayoutProps> = ({ children }) => {
                             AN
                         </div>
                         <div className="hidden md:block">
-                            <h1 className="text-sm font-heading tracking-widest text-neon-cyan uppercase">{profile.name}</h1>
+                            <h1 className="text-sm font-heading tracking-widest text-neon-cyan uppercase pt-2">{profile.nickname}</h1>
                             <p className="text-[8px] font-mono text-text-muted tracking-[0.2em]">SYSTEM_VERSION: 1.0.4</p>
                         </div>
                     </div>

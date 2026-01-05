@@ -138,7 +138,7 @@ export const Hero: React.FC = () => {
 
                 {/* Scroll indicator */}
                 <motion.div
-                    className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
+                    className="absolute bottom left-1/2 transform -translate-x-1/2 pt-10"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1, y: [0, 10, 0] }}
                     transition={{

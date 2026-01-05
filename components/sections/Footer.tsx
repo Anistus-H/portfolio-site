@@ -15,7 +15,7 @@ export const Footer: React.FC = () => {
                         <div className="absolute -top-2 -left-2 text-[8px] font-mono text-neon-cyan/50 uppercase">SYSTEM_ID_0x1A</div>
                         <div className="space-y-4">
                             <h3 className="text-2xl font-bold gradient-text font-heading tracking-tighter">
-                                {profile.name.split(' ')[1]}
+                                {profile.nickname.toUpperCase()}
                             </h3>
                             <p className="text-text-muted text-[10px] font-mono uppercase tracking-[0.2em] leading-relaxed">
                                 Embedded Systems Engineer<br />
