@@ -12,6 +12,7 @@ interface ButtonProps {
     className?: string;
     icon?: React.ReactNode;
     type?: 'button' | 'submit' | 'reset';
+    disabled?: boolean;
 }
 
 export const Button: React.FC<ButtonProps> = ({
@@ -22,7 +23,8 @@ export const Button: React.FC<ButtonProps> = ({
     href,
     className = '',
     icon,
-    type = 'button'
+    type = 'button',
+    disabled = false
 }) => {
     const baseStyles = 'inline-flex items-center justify-center gap-2 font-semibold transition-all duration-300 relative overflow-hidden group';
 
@@ -70,11 +72,12 @@ export const Button: React.FC<ButtonProps> = ({
 
     return (
         <motion.button
-            onClick={onClick}
-            className={buttonClasses}
+            onClick={!disabled ? onClick : undefined}
+            className={`${buttonClasses} ${disabled ? 'opacity-50 cursor-not-allowed grayscale' : ''}`}
             type={type}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            disabled={disabled}
+            whileHover={!disabled ? { scale: 1.05 } : {}}
+            whileTap={!disabled ? { scale: 0.95 } : {}}
         >
             {content}
         </motion.button>

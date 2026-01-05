@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { SectionHeading } from '../ui/SectionHeading';
 import { Card } from '../ui/Card';
 import { Button } from '../ui/Button';
+import { Mail, Github, Linkedin, MapPin, Send, Loader2 } from 'lucide-react';
 import { profile } from '@/data/profile';
 
 export const Contact: React.FC = () => {
@@ -13,12 +14,37 @@ export const Contact: React.FC = () => {
         email: '',
         message: ''
     });
+    const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+    const [errorMessage, setErrorMessage] = useState('');
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        // Frontend only - show success message
-        alert('Thank you for your message! Please contact me directly via email or LinkedIn.');
-        setFormData({ name: '', email: '', message: '' });
+        setStatus('loading');
+        setErrorMessage('');
+
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (!response.ok) {
+                const data = await response.json();
+                throw new Error(data.error || 'Failed to send message');
+            }
+
+            setStatus('success');
+            setFormData({ name: '', email: '', message: '' });
+            setTimeout(() => setStatus('idle'), 5000);
+        } catch (error: unknown) { // Explicitly type error as unknown
+            console.error('Contact form error:', error);
+            setStatus('error');
+            const message = error instanceof Error ? error.message : 'Something went wrong. Please try again later.';
+            setErrorMessage(message);
+        }
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -58,7 +84,8 @@ export const Contact: React.FC = () => {
                                         value={formData.name}
                                         onChange={handleChange}
                                         required
-                                        className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-sm text-text-primary focus:border-neon-cyan focus:outline-none transition-all font-mono text-sm placeholder:text-white/10"
+                                        disabled={status === 'loading'}
+                                        className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-sm text-text-primary focus:border-neon-cyan focus:outline-none transition-all font-mono text-sm placeholder:text-white/10 disabled:opacity-50"
                                         placeholder="Enter name..."
                                     />
                                 </div>
@@ -74,7 +101,8 @@ export const Contact: React.FC = () => {
                                         value={formData.email}
                                         onChange={handleChange}
                                         required
-                                        className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-sm text-text-primary focus:border-neon-cyan focus:outline-none transition-all font-mono text-sm placeholder:text-white/10"
+                                        disabled={status === 'loading'}
+                                        className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-sm text-text-primary focus:border-neon-cyan focus:outline-none transition-all font-mono text-sm placeholder:text-white/10 disabled:opacity-50"
                                         placeholder="Enter email..."
                                     />
                                 </div>
@@ -89,14 +117,43 @@ export const Contact: React.FC = () => {
                                         value={formData.message}
                                         onChange={handleChange}
                                         required
+                                        disabled={status === 'loading'}
                                         rows={5}
-                                        className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-sm text-text-primary focus:border-neon-cyan focus:outline-none transition-all font-mono text-sm resize-none placeholder:text-white/10"
+                                        className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-sm text-text-primary focus:border-neon-cyan focus:outline-none transition-all font-mono text-sm resize-none placeholder:text-white/10 disabled:opacity-50"
                                         placeholder="Enter message details..."
                                     />
                                 </div>
 
-                                <Button type="submit" variant="primary" size="lg" className="w-full tracking-[0.2em] uppercase text-xs">
-                                    Transmit_Data
+                                {status === 'success' && (
+                                    <p className="text-neon-green text-xs font-mono animate-fade-in">
+                                        [SUCCESS] Message transmitted successfully.
+                                    </p>
+                                )}
+
+                                {status === 'error' && (
+                                    <p className="text-neon-pink text-xs font-mono animate-fade-in">
+                                        [ERROR] {errorMessage}
+                                    </p>
+                                )}
+
+                                <Button
+                                    type="submit"
+                                    variant="primary"
+                                    size="lg"
+                                    className="w-full tracking-[0.2em] uppercase text-xs"
+                                    disabled={status === 'loading'}
+                                >
+                                    {status === 'loading' ? (
+                                        <span className="flex items-center gap-2">
+                                            <Loader2 className="w-4 h-4 animate-spin" />
+                                            Transmitting...
+                                        </span>
+                                    ) : (
+                                        <span className="flex items-center gap-2">
+                                            <Send className="w-4 h-4" />
+                                            Transmit_Data
+                                        </span>
+                                    )}
                                 </Button>
                             </form>
                         </Card>
@@ -113,9 +170,9 @@ export const Contact: React.FC = () => {
 
                                 <div className="space-y-4">
                                     {[
-                                        { label: 'EMAIL', value: profile.email, href: `mailto:${profile.email}`, icon: '📧', color: 'cyan' },
-                                        { label: 'GITHUB', value: 'github.com/Anistus-H', href: profile.github, icon: '💻', color: 'purple' },
-                                        { label: 'LINKEDIN', value: 'linkedin.com/in/anistus-h', href: profile.linkedin, icon: 'blue', color: 'blue' }
+                                        { label: 'EMAIL', value: profile.email, href: `mailto:${profile.email}`, icon: Mail, color: 'cyan' },
+                                        { label: 'GITHUB', value: 'github.com/Anistus-H', href: profile.github, icon: Github, color: 'purple' },
+                                        { label: 'LINKEDIN', value: 'linkedin.com/in/anistus-h', href: profile.linkedin, icon: Linkedin, color: 'blue' }
                                     ].map((link, i) => (
                                         <motion.a
                                             key={link.label}
@@ -129,8 +186,8 @@ export const Contact: React.FC = () => {
                                             viewport={{ once: true }}
                                             transition={{ delay: 0.1 * i }}
                                         >
-                                            <div className={`w-10 h-10 flex items-center justify-center border border-neon-${link.color}/20 text-xl`}>
-                                                {link.icon === 'blue' ? '🔗' : link.icon}
+                                            <div className={`w-10 h-10 flex items-center justify-center border border-neon-${link.color}/20 text-xl text-neon-${link.color}`}>
+                                                <link.icon className="w-5 h-5" />
                                             </div>
                                             <div>
                                                 <div className="text-text-muted text-[8px] font-mono tracking-widest uppercase">{link.label}</div>
@@ -148,8 +205,8 @@ export const Contact: React.FC = () => {
                                         viewport={{ once: true }}
                                         transition={{ delay: 0.3 }}
                                     >
-                                        <div className="w-10 h-10 flex items-center justify-center border border-white/10 text-xl">
-                                            📍
+                                        <div className="w-10 h-10 flex items-center justify-center border border-white/10 text-xl text-text-secondary">
+                                            <MapPin className="w-5 h-5" />
                                         </div>
                                         <div>
                                             <div className="text-text-muted text-[8px] font-mono tracking-widest uppercase">LOCATION</div>

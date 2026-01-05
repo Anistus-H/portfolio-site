@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
-import { profile } from '@/data/profile';
 
 interface HUDLayoutProps {
     children: React.ReactNode;

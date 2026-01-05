@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { Github, Linkedin, Mail } from 'lucide-react';
 import { profile } from '@/data/profile';
 
 export const Footer: React.FC = () => {
@@ -49,9 +50,9 @@ export const Footer: React.FC = () => {
                         <h4 className="text-neon-purple font-mono text-[10px] tracking-[0.3em] mb-6 uppercase">Connect</h4>
                         <div className="flex gap-4">
                             {[
-                                { label: 'GH', href: profile.github, icon: '💻', color: 'cyan' },
-                                { label: 'LI', href: profile.linkedin, icon: '🔗', color: 'purple' },
-                                { label: 'EM', href: `mailto:${profile.email}`, icon: '📧', color: 'blue' }
+                                { label: 'GH', href: profile.github, icon: Github, color: 'cyan' },
+                                { label: 'LI', href: profile.linkedin, icon: Linkedin, color: 'purple' },
+                                { label: 'EM', href: `mailto:${profile.email}`, icon: Mail, color: 'blue' }
                             ].map((social) => (
                                 <a
                                     key={social.label}
@@ -61,9 +62,7 @@ export const Footer: React.FC = () => {
                                     className={`w-10 h-10 flex items-center justify-center border border-white/10 hover:border-neon-${social.color}/50 transition-all group`}
                                     aria-label={social.label}
                                 >
-                                    <span className="text-lg group-hover:scale-110 transition-transform">
-                                        {social.icon === '🔗' ? '🔗' : social.icon}
-                                    </span>
+                                    <social.icon className="w-5 h-5 text-text-secondary group-hover:text-neon-cyan transition-colors" />
                                 </a>
                             ))}
                         </div>
