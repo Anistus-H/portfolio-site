@@ -32,8 +32,14 @@ export const Contact: React.FC = () => {
             });
 
             if (!response.ok) {
-                const data = await response.json();
-                throw new Error(data.error || 'Failed to send message');
+                const contentType = response.headers.get('content-type');
+                if (contentType && contentType.includes('application/json')) {
+                    const data = await response.json();
+                    throw new Error(data.error || 'Failed to send message');
+                } else {
+                    // If not JSON, it's likely an HTML error page from Cloudflare
+                    throw new Error(`Server error (${response.status}). Please check your environment variables in Cloudflare.`);
+                }
             }
 
             setStatus('success');
