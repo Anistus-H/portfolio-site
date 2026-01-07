@@ -9,6 +9,8 @@ interface ButtonProps {
     size?: 'sm' | 'md' | 'lg';
     onClick?: () => void;
     href?: string;
+    target?: string;
+    rel?: string;
     className?: string;
     icon?: React.ReactNode;
     type?: 'button' | 'submit' | 'reset';
@@ -21,6 +23,8 @@ export const Button: React.FC<ButtonProps> = ({
     size = 'md',
     onClick,
     href,
+    target,
+    rel,
     className = '',
     icon,
     type = 'button',
@@ -61,6 +65,8 @@ export const Button: React.FC<ButtonProps> = ({
         return (
             <motion.a
                 href={href}
+                target={target}
+                rel={rel}
                 className={buttonClasses}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}

@@ -232,13 +232,26 @@ export const Contact: React.FC = () => {
                                     <p className="text-text-secondary text-sm mb-6 leading-relaxed">
                                         Open to freelance projects, full-time opportunities, and collaborations
                                     </p>
-                                    <div className="inline-flex items-center gap-3 px-6 py-2 border border-neon-green/20 bg-neon-green/5 rounded-full">
-                                        <motion.div
-                                            className="w-2 h-2 bg-neon-green rounded-full shadow-[0_0_8px_rgba(0,255,157,0.5)]"
-                                            animate={{ opacity: [1, 0.4, 1] }}
-                                            transition={{ duration: 2, repeat: Infinity }}
-                                        />
-                                        <span className="text-neon-green font-mono text-[10px] font-bold tracking-[0.2em] uppercase">Available for work</span>
+                                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                                        <div className="inline-flex items-center gap-3 px-6 py-2 border border-neon-green/20 bg-neon-green/5 rounded-full">
+                                            <motion.div
+                                                className="w-2 h-2 bg-neon-green rounded-full shadow-[0_0_8px_rgba(0,255,157,0.5)]"
+                                                animate={{ opacity: [1, 0.4, 1] }}
+                                                transition={{ duration: 2, repeat: Infinity }}
+                                            />
+                                            <span className="text-neon-green font-mono text-[10px] font-bold tracking-[0.2em] uppercase">Available for work</span>
+                                        </div>
+                                        <Button
+                                            variant="outline"
+                                            size="sm"
+                                            href="/Anistus-CV.pdf"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            icon="📥"
+                                            className="w-full sm:w-auto"
+                                        >
+                                            Download CV
+                                        </Button>
                                     </div>
                                 </div>
                             </Card>

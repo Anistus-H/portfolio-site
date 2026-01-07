@@ -4,6 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { SectionHeading } from '../ui/SectionHeading';
 import { Card } from '../ui/Card';
+import { Button } from '../ui/Button';
 import { profile } from '@/data/profile';
 
 export const About: React.FC = () => {
@@ -43,7 +44,7 @@ export const About: React.FC = () => {
                                     </p>
                                 </div>
 
-                                <div className="mt-8 pt-6 border-t border-neon-cyan/10 flex items-center gap-6">
+                                <div className="mt-8 pt-6 border-t border-neon-cyan/10 flex flex-wrap items-center gap-6">
                                     <div className="text-center">
                                         <p className="text-neon-cyan font-mono text-xl font-bold">05+</p>
                                         <p className="text-[8px] font-mono text-text-muted uppercase">Years Exp</p>
@@ -57,6 +58,18 @@ export const About: React.FC = () => {
                                     <div className="text-center">
                                         <p className="text-neon-blue font-mono text-xl font-bold">100%</p>
                                         <p className="text-[8px] font-mono text-text-muted uppercase">Uptime</p>
+                                    </div>
+                                    <div className="ml-auto">
+                                        <Button
+                                            variant="primary"
+                                            size="sm"
+                                            href="/Anistus-CV.pdf"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            icon="📥"
+                                        >
+                                            Download CV
+                                        </Button>
                                     </div>
                                 </div>
                             </motion.div>
