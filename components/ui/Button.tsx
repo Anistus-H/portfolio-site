@@ -33,8 +33,8 @@ export const Button: React.FC<ButtonProps> = ({
     const baseStyles = 'inline-flex items-center justify-center gap-2 font-semibold transition-all duration-300 relative overflow-hidden group';
 
     const variantStyles = {
-        primary: 'bg-neon-cyan text-bg-primary hover:bg-neon-blue neon-border-cyan',
-        secondary: 'bg-neon-purple text-white hover:bg-neon-pink neon-border-purple',
+        primary: 'bg-neon-cyan text-bg-primary hover:bg-neon-cyan neon-border-cyan',
+        secondary: 'bg-neon-cyan text-white hover:bg-neon-pink neon-border-cyan',
         outline: 'bg-transparent text-neon-cyan border-2 border-neon-cyan hover:bg-neon-cyan hover:text-bg-primary'
     };
 
