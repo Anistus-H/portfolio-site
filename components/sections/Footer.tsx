@@ -18,10 +18,10 @@ export const Footer: React.FC = () => {
                 </div>
 
                 <div className="flex gap-6">
-                    <a href={profile.github} target="_blank" rel="noopener noreferrer" className="text-text-secondary hover:text-white transition-colors">
+                    <a href={profile.github} target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-neon-cyan transition-colors">
                         <Github className="w-5 h-5" />
                     </a>
-                    <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="text-text-secondary hover:text-white transition-colors">
+                    <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-neon-cyan transition-colors">
                         <Linkedin className="w-5 h-5" />
                     </a>
                     <a href={`mailto:${profile.email}`} className="text-text-secondary hover:text-white transition-colors">
@@ -29,7 +29,7 @@ export const Footer: React.FC = () => {
                     </a>
                 </div>
 
-                <div className="text-text-muted text-xs font-mono">
+                <div className="text-white/50 text-xs font-mono">
                     &copy; {currentYear} {profile.name}
                 </div>
             </div>
