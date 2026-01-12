@@ -44,23 +44,26 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
 
     return (
         <div className="min-h-screen bg-bg-primary text-text-primary">
-            {/* Slim Vertical Nav (Left) */}
-            <div className="hidden lg:flex fixed left-0 top-0 bottom-0 w-10 border-r border-white/5 flex-col items-center justify-center py-24 z-60 bg-bg-primary/50 backdrop-blur-sm gap-12">
-                {navItems.map((item) => (
-                    <a
-                        key={item.name}
-                        href={item.href}
-                        style={{ writingMode: 'vertical-rl', textOrientation: 'upright' }}
-                        className={`
-                            text-[10px] font-mono tracking-[0.3em] uppercase transition-all duration-300 py-4
-                            ${activeSection === item.href.substring(1)
-                                ? 'text-neon-cyan font-bold scale-110'
-                                : 'text-text-muted hover:text-white hover:scale-105'
-                            }
-                        `}
-                    >
-                        {item.name}
-                    </a>
+            <div className="hidden lg:flex fixed left-0 top-0 bottom-0 w-10 border-r border-white/5 flex-col items-center justify-center py-24 z-60 bg-bg-primary/50 backdrop-blur-sm gap-4">
+                {navItems.map((item, index) => (
+                    <React.Fragment key={item.name}>
+                        <a
+                            href={item.href}
+                            style={{ writingMode: 'vertical-rl', textOrientation: 'upright' }}
+                            className={`
+                                text-[10px] font-mono tracking-widest uppercase transition-all duration-300 py-2
+                                ${activeSection === item.href.substring(1)
+                                    ? 'text-neon-cyan font-bold scale-110'
+                                    : 'text-text-muted hover:text-white hover:scale-105'
+                                }
+                            `}
+                        >
+                            {item.name}
+                        </a>
+                        {index < navItems.length - 1 && (
+                            <span className="text-white/20 text-[10px] select-none opacity-50">*</span>
+                        )}
+                    </React.Fragment>
                 ))}
             </div>
 
