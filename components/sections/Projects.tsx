@@ -18,7 +18,7 @@ export const Projects: React.FC = () => {
                     viewport={{ once: true }}
                     className="mb-4 flex items-end gap-4"
                 >
-                    <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">Some of my Work</h2>
+                    <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">What I've Build</h2>
                     <span className="text-neon-cyan font-mono mb-2">({projects.length})</span>
                 </motion.div>
                 <div className="h-1 w-20 bg-neon-cyan/50 mb-10" />
