@@ -137,7 +137,7 @@ export const Contact: React.FC = () => {
                         <button
                             type="submit"
                             disabled={status === 'loading'}
-                            className="w-full bg-neon-cyan text-bg-primary font-bold py-3 rounded hover:bg-neon-cyan/90 transition-colors flex items-center justify-center gap-2 disabled:opacity-50"
+                            className="w-full bg-neon-cyan text-bg-primary font-bold py-3 rounded hover:bg-neon-cyan/50 transition-all flex items-center justify-center gap-2 disabled:opacity-50"
                         >
                             {status === 'loading' ? (
                                 <>
