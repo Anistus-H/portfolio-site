@@ -7,11 +7,11 @@ import { profile } from '@/data/profile';
 
 export const Hero: React.FC = () => {
     return (
-        <section className="min-h-screen flex flex-col justify-center py-20 relative overflow-hidden">
+        <section className="min-h-screen flex flex-col justify-center pt-32 pb-20 relative overflow-hidden">
             {/* Background Gradient Spot */}
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-neon-cyan/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
 
-            <div className="max-w-5xl mx-auto w-full px-6 z-10">
+            <div className="max-w-5xl mx-auto w-full px-6 md:px-12 z-10">
                 <div className="max-w-4xl">
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}

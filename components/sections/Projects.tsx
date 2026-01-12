@@ -9,7 +9,7 @@ export const Projects: React.FC = () => {
     const [hoveredProject, setHoveredProject] = useState<string | null>(null);
 
     return (
-        <section id="projects" className="py-24 px-6 lg:px-20 relative">
+        <section id="projects" className="py-24 px-6 md:px-12 lg:px-20 relative">
             <div className="max-w-6xl mx-auto">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

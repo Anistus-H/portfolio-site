@@ -6,7 +6,7 @@ import { engineerStats } from '@/data/stats';
 
 export const EngineerStats: React.FC = () => {
     return (
-        <section id="stats" className="py-24 px-6 relative bg-bg-secondary/20">
+        <section id="stats" className="py-24 px-6 md:px-12 lg:px-20 bg-bg-secondary/20 border-y border-white/5">
             <div className="max-w-6xl mx-auto">
                 <div className="flex flex-wrap justify-center gap-8 md:gap-16">
                     {engineerStats.map((stat, index) => (

@@ -69,7 +69,7 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
 
             {/* Top Fixed Header */}
             <header className={`fixed top-0 left-0 right-0 h-20 z-50 transition-all duration-300 ${scrolled ? 'bg-bg-primary/90 backdrop-blur-md border-b border-white/5' : 'bg-transparent'}`}>
-                <div className="max-w-7xl mx-auto px-6 h-full flex items-center justify-between">
+                <div className="max-w-7xl mx-auto px-6 lg:pl-14 h-full flex items-center justify-between">
                     {/* Logo */}
                     <a href="#hero" className="font-bold text-xl tracking-tight text-white group z-50">
                         ANISTUS<span className="text-neon-cyan">.</span>
