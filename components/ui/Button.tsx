@@ -34,7 +34,7 @@ export const Button: React.FC<ButtonProps> = ({
 
     const variantStyles = {
         primary: 'bg-neon-cyan text-bg-primary hover:bg-neon-cyan neon-border-cyan',
-        secondary: 'bg-neon-cyan text-white hover:bg-neon-pink neon-border-cyan',
+        secondary: 'bg-neon-cyan text-white border-2 border-neon-cyan hover:bg-transparent neon-border-cyan',
         outline: 'bg-transparent text-neon-cyan border-2 border-neon-cyan hover:bg-neon-cyan hover:text-bg-primary'
     };
 
