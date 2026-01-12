@@ -121,9 +121,7 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
 
             {/* Main Content Area */}
             <main className="lg:pl-12 pt-0 min-h-screen">
-                <div className="max-w-7xl mx-auto w-full">
-                    {children}
-                </div>
+                {children}
             </main>
         </div>
     );

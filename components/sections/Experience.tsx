@@ -7,7 +7,7 @@ import { experiences } from '@/data/experience';
 export const Experience: React.FC = () => {
     return (
         <section id="experience" className="py-24 px-6 lg:px-20 relative">
-            <div className="max-w-4xl mx-auto">
+            <div className="max-w-5xl mx-auto">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
