@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { profile } from '@/data/profile';
+import { engineerStats } from '@/data/stats';
 import { Button } from '../ui/Button';
 
 export const About: React.FC = () => {
@@ -58,11 +59,11 @@ export const About: React.FC = () => {
                         className="grid grid-cols-2 gap-6"
                     >
                         <div className="p-6 bg-white/5 rounded-sm border border-white/10">
-                            <h4 className="text-3xl font-bold text-white mb-2">05+</h4>
+                            <h4 className="text-3xl font-bold text-white mb-2">{engineerStats[0].value}+</h4>
                             <p className="text-sm font-mono text-text-muted uppercase tracking-widest">Years Experience</p>
                         </div>
                         <div className="p-6 bg-white/5 rounded-sm border border-white/10">
-                            <h4 className="text-3xl font-bold text-white mb-2">50+</h4>
+                            <h4 className="text-3xl font-bold text-white mb-2">{engineerStats[1].value}+</h4>
                             <p className="text-sm font-mono text-text-muted uppercase tracking-widest">Projects</p>
                         </div>
                         <div className="col-span-2 p-6 bg-white/5 rounded-sm border border-white/10">

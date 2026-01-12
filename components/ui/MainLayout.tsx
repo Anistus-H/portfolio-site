@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { Button } from './Button';
+import { profile } from '@/data/profile';
 
 interface MainLayoutProps {
     children: React.ReactNode;
@@ -72,7 +73,7 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
                 <div className="max-w-7xl mx-auto px-6 lg:pl-14 h-full flex items-center justify-between">
                     {/* Logo */}
                     <a href="#hero" className="font-bold text-xl tracking-tight text-white group z-50">
-                        ANISTUS<span className="text-neon-cyan">.</span>
+                        {profile.nickname.toUpperCase()}<span className="text-neon-cyan">.</span>
                     </a>
 
                     {/* Desktop Contact Button */}
