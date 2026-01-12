@@ -10,11 +10,19 @@ export interface EngineerStat {
 export const engineerStats: EngineerStat[] = [
     {
         id: "experience",
-        label: "Years of Experience",
+        label: "Of Experience",
         value: 4,
-        unit: "years",
+        unit: "+ years",
         icon: "⚡",
         color: "cyan"
+    },
+    {
+        id: "languages",
+        label: "Programming Languages",
+        value: 8,
+        unit: "+",
+        icon: "🔧",
+        color: "purple"
     },
     {
         id: "projects",
@@ -33,28 +41,12 @@ export const engineerStats: EngineerStat[] = [
         color: "blue"
     },
     {
-        id: "code",
-        label: "Lines of Code",
-        value: 50000,
-        unit: "+",
-        icon: "💻",
-        color: "green"
-    },
-    {
         id: "uptime",
         label: "System Uptime",
         value: 99.9,
         unit: "%",
         icon: "⚙️",
         color: "cyan"
-    },
-    {
-        id: "languages",
-        label: "Programming Languages",
-        value: 8,
-        unit: "+",
-        icon: "🔧",
-        color: "purple"
     }
 ];
 
