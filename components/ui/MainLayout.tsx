@@ -51,7 +51,7 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
                             href={item.href}
                             style={{ writingMode: 'vertical-rl', textOrientation: 'upright' }}
                             className={`
-                                text-[10px] font-mono tracking-widest uppercase transition-all duration-300 py-2
+                                text-[10px] font-mono tracking-[0.02em] uppercase transition-all duration-300 py-2
                                 ${activeSection === item.href.substring(1)
                                     ? 'text-neon-cyan font-bold scale-110'
                                     : 'text-text-muted hover:text-white hover:scale-105'
