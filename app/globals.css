@@ -4,28 +4,35 @@
    CYBERPUNK THEME - CUSTOM PROPERTIES
    ============================================ */
 :root {
-    /* Dark Base Colors */
-    --bg-primary: #0a0a0f;
-    --bg-secondary: #111118;
-    --bg-tertiary: #1a1a24;
+    /* Dark Base Colors - Inspired by Dribbble Shot */
+    --bg-primary: #0f172a;
+    /* Slate 900/Midnight */
+    --bg-secondary: #1e293b;
+    /* Slate 800 */
+    --bg-tertiary: #334155;
+    /* Slate 700 */
 
-    /* Neon Accent Colors */
-    --neon-cyan: #00f0ff;
-    --neon-purple: #b026ff;
-    --neon-blue: #0066ff;
-    --neon-green: #00ff88;
-    --neon-pink: #ff00ff;
+    /* Accents */
+    --neon-cyan: #2dd4bf;
+    /* Teal 400 - Main Accent */
+    --neon-purple: #a78bfa;
+    /* Violet 400 - Secondary Accent */
+    --neon-blue: #60a5fa;
+    /* Blue 400 */
+    --neon-green: #4ade80;
+    /* Green 400 */
 
     /* Text Colors */
-    --text-primary: #e0e0e0;
-    --text-secondary: #a0a0a0;
-    --text-muted: #606060;
+    --text-primary: #f8fafc;
+    /* Slate 50 */
+    --text-secondary: #94a3b8;
+    /* Slate 400 */
+    --text-muted: #64748b;
+    /* Slate 500 */
 
-    /* Glow Effects */
-    --glow-cyan: 0 0 10px rgba(0, 240, 255, 0.5), 0 0 20px rgba(0, 240, 255, 0.3);
-    --glow-purple: 0 0 10px rgba(176, 38, 255, 0.5), 0 0 20px rgba(176, 38, 255, 0.3);
-    --glow-blue: 0 0 10px rgba(0, 102, 255, 0.5), 0 0 20px rgba(0, 102, 255, 0.3);
-    --glow-green: 0 0 10px rgba(0, 255, 136, 0.5), 0 0 20px rgba(0, 255, 136, 0.3);
+    /* Glow Effects - More subtle */
+    --glow-cyan: 0 0 15px rgba(45, 212, 191, 0.3);
+    --glow-purple: 0 0 15px rgba(167, 139, 250, 0.3);
 }
 
 /* ============================================
@@ -172,87 +179,40 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     position: relative;
+    /* Smooth anti-aliased text */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* ============================================
    UTILITY CLASSES
    ============================================ */
 
-/* Glassmorphism */
-.glass {
-    background: rgba(17, 17, 24, 0.7);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+/* ============================================
+   MINIMALIST UTILITIES
+   ============================================ */
+
+/* Soft Card Background */
+.card-glass {
+    background: rgba(30, 41, 59, 0.4);
+    /* Slate 800 with opacity */
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.glass-strong {
-    background: rgba(17, 17, 24, 0.9);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+.card-glass:hover {
+    background: rgba(30, 41, 59, 0.6);
+    border-color: rgba(45, 212, 191, 0.2);
+    /* Neon Cyan hint */
+    transition: all 0.3s ease;
 }
 
-/* Neon Text Effects */
-.neon-text-cyan {
-    color: var(--neon-cyan);
-    text-shadow: var(--glow-cyan);
-}
-
-.neon-text-purple {
-    color: var(--neon-purple);
-    text-shadow: var(--glow-purple);
-}
-
-.neon-text-blue {
-    color: var(--neon-blue);
-    text-shadow: var(--glow-blue);
-}
-
-.neon-text-green {
-    color: var(--neon-green);
-    text-shadow: var(--glow-green);
-}
-
-/* Neon Border Effects */
-.neon-border-cyan {
-    border: 1px solid var(--neon-cyan);
-    box-shadow: var(--glow-cyan), inset var(--glow-cyan);
-}
-
-.neon-border-purple {
-    border: 1px solid var(--neon-purple);
-    box-shadow: var(--glow-purple), inset var(--glow-purple);
-}
-
-.neon-border-blue {
-    border: 1px solid var(--neon-blue);
-    box-shadow: var(--glow-blue), inset var(--glow-blue);
-}
-
-/* Gradient Text */
-.gradient-text {
-    background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple), var(--neon-blue));
+/* Subtle Gradient Text - For special headers */
+.gradient-text-subtle {
+    background: linear-gradient(135deg, var(--text-primary), var(--text-secondary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-}
-
-/* HUD Panel */
-.hud-panel {
-    position: relative;
-    background: rgba(17, 17, 24, 0.8);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(0, 240, 255, 0.3);
-    box-shadow: 0 0 20px rgba(0, 240, 255, 0.1);
-}
-
-.hud-panel::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 4px;
-    height: 100%;
-    background: linear-gradient(180deg, var(--neon-cyan), var(--neon-purple));
 }
 
 /* Scrollbar Styling */
