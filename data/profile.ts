@@ -2,6 +2,7 @@ export const profile = {
   name: "Hyrib Anistus Gnanaretnam",
   nickname: "Anistus",
   title: "Embedded Systems Engineer | Software Engineer | Full-Stack Developer",
+  metatitle: "Hyrib Anistus Gnanaretnam | Embedded Systems Engineer",
   tagline: "Building intelligent systems from silicon to cloud",
   email: "anistush@gmail.com",
   phone: "+94 76 870 6430",

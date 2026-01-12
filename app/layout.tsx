@@ -20,7 +20,7 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  title: `${profile.name} | ${profile.title}`,
+  title: profile.metatitle,
   description: profile.summary,
   keywords: ["Embedded Systems", "Software Engineer", "Full-Stack Developer", "IoT", "STM32", "Next.js", "React"],
   authors: [{ name: profile.name }],
